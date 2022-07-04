@@ -1,0 +1,136 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: nombremicroservicio
+  name: nombremicroservicio
+  namespace: nombredominio  
+spec:
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: docker-registry.default.svc:5000/nombredominio/nombremicroservicio
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:      
+  labels:
+    app: nombremicroservicio
+  name: nombremicroservicio
+  namespace: nombredominio    
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: nombremicroservicio
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:      
+      labels:
+        app: nombremicroservicio
+        deploymentconfig: nombremicroservicio
+    spec:
+      containers:        
+      - image: docker-registry.default.svc:5000/nombredominio/nombremicroservicio
+        imagePullPolicy: Always
+        name: nombremicroservicio
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 125Mi
+          requests:
+            cpu: 50m
+            memory: 75Mi        
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /opt/app-root/configs/centralizada
+          name: volume-centralizada
+        - mountPath: /opt/app-root/configs/catalogo
+          name: volume-catalogo
+        - mountPath: /opt/app-root/configs/logs
+          name: volume-logs
+        - mountPath: /opt/app-root/configs/servicio
+          name: volume-servicio        
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: centralizada
+        name: volume-centralizada
+      - configMap:
+          defaultMode: 420
+          name: catalogos
+        name: volume-catalogo
+      - configMap:
+          defaultMode: 420
+          name: logconfiguracion
+        name: volume-logs
+      - configMap:
+          defaultMode: 420
+          name: nombremicroservicio
+        name: volume-servicio      
+  triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - nombremicroservicio
+        from:
+          kind: ImageStreamTag
+          name: 'nombremicroservicio:latest'
+          namespace: nombredominio
+      type: ImageChange
+    - type: ConfigChange
+  test: false
+---
+apiVersion: v1
+kind: Service
+metadata:    
+  labels:
+    app: nombremicroservicio
+  name: nombremicroservicio
+  namespace: nombredominio    
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    deploymentconfig: nombremicroservicio
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:    
+  labels:
+    app: nombremicroservicio
+  name: nombremicroservicio
+  namespace: nombredominio    
+spec:
+  host: nombremicroservicio-nombredominio.apps.desa.bpichincha.com
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: nombremicroservicio
+    weight: 100
+  wildcardPolicy: None

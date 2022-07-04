@@ -1,0 +1,55 @@
+trigger:
+- '*'
+
+variables:
+  buildConfiguration: 'Release'
+  isDevelopBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/develop')]
+  isReleaseBranch: $[startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')]
+  testWorkingDirectory: 'nombremicroservicio.Tests'
+  testProjectFilePath: 'nombremicroservicio.Tests/nombremicroservicio.Tests.csproj'
+  sonarProjectKey: 'ws-nombremicroservicio-netcore'
+  project: 'nombremicroservicio.API'
+  repositoryImageName: 'bp/nombredominio/ws-nombremicroservicio-netcore'
+  openshiftImageStream: nombremicroservicio
+  openshiftNamespace: nombredominio
+
+resources:
+ repositories:
+   - repository: NetcoreTemplate
+     type: git
+     name: IntegrationServicesNetCore/common-pipeline-template-netcore
+     ref: refs/heads/masterv2
+
+stages:
+- template: continuousIntegration.yml@NetcoreTemplate
+  parameters:
+    testWorkingDirectory: $(testWorkingDirectory)
+    testProjectFilePath: $(testProjectFilePath)
+    sonarProjectKey: $(sonarProjectKey)
+
+- template: publish.yml@NetcoreTemplate
+  parameters:
+    projectDirectory: './$(project)'
+
+- template: generateDockerImage.yml@NetcoreTemplate
+  parameters:
+    projectDirectory: $(project)
+    repositoryName: $(repositoryImageName)
+
+- template: deployOpenshiftDev.yml@NetcoreTemplate
+  parameters:
+    repositoryName: $(repositoryImageName)
+    openshiftImageStream: $(openshiftImageStream)
+    openshiftNamespace: $(openshiftNamespace)
+
+- template: deployOpenshiftTest.yml@NetcoreTemplate
+  parameters:
+    repositoryName: $(repositoryImageName)
+    openshiftImageStream: $(openshiftImageStream)
+    openshiftNamespace: $(openshiftNamespace)
+
+- template: deployOpenshiftProd.yml@NetcoreTemplate
+  parameters:
+    repositoryName: $(repositoryImageName)
+    openshiftImageStream: $(openshiftImageStream)
+    openshiftNamespace: $(openshiftNamespace)

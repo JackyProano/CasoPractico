@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditoAutomotriz.API", "nombremicroservicio.API\CreditoAutomotriz.API.csproj", "{85A902B2-1EC8-4E6D-BA13-28A107EEAD29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditoAutomotriz.Domain", "nombremicroservicio.Domain\CreditoAutomotriz.Domain.csproj", "{DB3EC059-564C-4BA6-9E75-0DBE1BE3F2F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditoAutomotriz.Entities", "nombremicroservicio.Entities\CreditoAutomotriz.Entities.csproj", "{283225B2-DAC2-4FBC-833C-C028D77D7417}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditoAutomotriz.Infrastructure", "nombremicroservicio.Infrastructure\CreditoAutomotriz.Infrastructure.csproj", "{2F4D5397-9FAC-482D-9DEA-327B948A5D61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditoAutomotriz.Repository", "nombremicroservicio.Repository\CreditoAutomotriz.Repository.csproj", "{ED520BFD-13CE-4B92-BB3B-AB4D23B89818}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditoAutomotriz.Test", "nombremicroservicio.Test\CreditoAutomotriz.Test.csproj", "{8B9B8FC3-861E-457C-BED5-B47E00AB97F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85A902B2-1EC8-4E6D-BA13-28A107EEAD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85A902B2-1EC8-4E6D-BA13-28A107EEAD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85A902B2-1EC8-4E6D-BA13-28A107EEAD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85A902B2-1EC8-4E6D-BA13-28A107EEAD29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3EC059-564C-4BA6-9E75-0DBE1BE3F2F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3EC059-564C-4BA6-9E75-0DBE1BE3F2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3EC059-564C-4BA6-9E75-0DBE1BE3F2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3EC059-564C-4BA6-9E75-0DBE1BE3F2F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283225B2-DAC2-4FBC-833C-C028D77D7417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283225B2-DAC2-4FBC-833C-C028D77D7417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283225B2-DAC2-4FBC-833C-C028D77D7417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283225B2-DAC2-4FBC-833C-C028D77D7417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F4D5397-9FAC-482D-9DEA-327B948A5D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4D5397-9FAC-482D-9DEA-327B948A5D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4D5397-9FAC-482D-9DEA-327B948A5D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4D5397-9FAC-482D-9DEA-327B948A5D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED520BFD-13CE-4B92-BB3B-AB4D23B89818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED520BFD-13CE-4B92-BB3B-AB4D23B89818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED520BFD-13CE-4B92-BB3B-AB4D23B89818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED520BFD-13CE-4B92-BB3B-AB4D23B89818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B9B8FC3-861E-457C-BED5-B47E00AB97F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B9B8FC3-861E-457C-BED5-B47E00AB97F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B9B8FC3-861E-457C-BED5-B47E00AB97F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B9B8FC3-861E-457C-BED5-B47E00AB97F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AACB691D-4AF3-4260-87C7-EB503C21099C}
+	EndGlobalSection
+EndGlobal

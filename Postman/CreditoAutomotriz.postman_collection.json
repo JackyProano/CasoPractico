@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "db3c11f2-5067-41ae-b383-9a5c0ffeebb3",
+		"name": "CreditoAutomotriz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administracion Patios",
+			"item": [
+				{
+					"name": "ConsultaPatio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Patios/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Patios",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreaPatio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NumeroPuntoVenta\":10,\r\n    \"Nombre\": \"Patio Centro\",\r\n    \"Direccion\": \"Av. America\",\r\n    \"Telefono\": \"022171819\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Patios/patio",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Patios",
+								"patio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditaPatio",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"IdPatio\":8,\r\n   \"NumeroPuntoVenta\":10,\r\n    \"Nombre\": \"Patio 2 en el Centro\",\r\n    \"Direccion\": \"Av. America y Colon\",\r\n    \"Telefono\": \"022171819\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Patios/Patio",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Patios",
+								"Patio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminaPatio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Patios/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Patios",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administracion Vehiculos",
+			"item": [
+				{
+					"name": "CreaVehiculo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Placa\":\"PCT1553\",\r\n    \"Modelo\": 2017,\r\n    \"IdMarca\": 5,\r\n    \"Tipo\": \"Camioneta\",\r\n    \"Cilindraje\": \"5.0\",\r\n    \"Avaluo\": \"10000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Vehiculos/vehiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vehiculos",
+								"vehiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditaVehiculo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdVehiculo\":1,\r\n    \"Placa\":\"PCT1553\",\r\n    \"Modelo\": 2018,\r\n    \"IdMarca\": 5,\r\n    \"Tipo\": \"Camioneta\",\r\n    \"Cilindraje\": \"5.0\",\r\n    \"Avaluo\": \"10000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Vehiculos/vehiculo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vehiculos",
+								"vehiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminaVehiculo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Vehiculos/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vehiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultaVehiculo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Vehiculos/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vehiculos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administracion Clientes",
+			"item": [
+				{
+					"name": "ConsultaCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Clientes/18",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Clientes",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreaCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"idCliente\":0,\r\n    \"identificacion\":\"1803560281\",\r\n    \"nombres\":\"Armando\",\r\n    \"edad\":26,\r\n    \"fechaNacimiento\":\"1992-07-06T00:00:00\",\r\n    \"apellidos\":\"Acosta\",\r\n    \"direccion\":\"Ambato\",\r\n    \"telefono\":\"022474595\",\r\n    \"estadoCivil\":\"S\",\r\n    \"identificacionConyuge\":\"\",\r\n    \"nombresConyuge\":\"\",\r\n    \"esSujetoCredito\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Clientes/Cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Clientes",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditaCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"idCliente\":21,\r\n    \"identificacion\":\"1803560281\",\r\n    \"nombres\":\"Nancy\",\r\n    \"edad\":26,\r\n    \"fechaNacimiento\":\"1992-07-06T00:00:00\",\r\n    \"apellidos\":\"Proaño\",\r\n    \"direccion\":\"Ambato\",\r\n    \"telefono\":\"022474595\",\r\n    \"estadoCivil\":\"S\",\r\n    \"identificacionConyuge\":\"\",\r\n    \"nombresConyuge\":\"\",\r\n    \"esSujetoCredito\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Clientes/Cliente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Clientes",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminaCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Clientes/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Clientes",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asignacion de Clientes",
+			"item": [
+				{
+					"name": "ConsultaAsignacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/AsignacionCliente/18",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"AsignacionCliente",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreaAsignacionClientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"IdAsignacionCliente\":0,\r\n    \"IdCliente\":20,\r\n    \"IdPatio\":5,\r\n    \"FechaAsignacion\":\"2022-07-02T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/AsignacionClientes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"AsignacionClientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditaAsignacionCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"IdAsignacionCliente\":1,\r\n    \"IdCliente\":2,\r\n    \"IdPatio\":5,\r\n    \"FechaAsignacion\":\"2022-07-02T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/AsignacionClientes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"AsignacionClientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminaAsignacionClientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/AsignacionClientes/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"AsignacionClientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Solicitud de Credito",
+			"item": [
+				{
+					"name": "ConsultaSolicitudCredito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/SolicitudCredito/18",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"SolicitudCredito",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreaSolicitudCredito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"IdSolicitudCredito\":0,\r\n    \"FechaElaboracion\":\"2022-07-01\",\r\n    \"IdCliente\":21,\r\n    \"IdPatio\":5,\r\n    \"IdVehiculo\":2,\r\n    \"MesesPlazo\":18,\r\n    \"Cuotas\":18,\r\n    \"Entrada\":1000.52,\r\n    \"IdEjecutivo\":10,\r\n    \"Observacion\":\"Prueba inicial\",\r\n    \"Estado\":\"A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/SolicitudCredito/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"SolicitudCredito",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CargarMarcas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/CargaMasiva/CargaInicialDatos/M",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"CargaMasiva",
+						"CargaInicialDatos",
+						"M"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CargarEjecutivos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/CargaMasiva/CargaInicialDatos/E",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"CargaMasiva",
+						"CargaInicialDatos",
+						"E"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
